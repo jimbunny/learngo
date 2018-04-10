@@ -8,7 +8,7 @@
 	1,a, b, s1, s2 := true, false, 3, "hello", "world"
 	2,只能在函数内使用
 */
-package 基础语法
+package main
 
 import "fmt"
 
