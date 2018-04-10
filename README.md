@@ -1,6 +1,6 @@
 # go语言学习笔记
 
-* 环境搭建
+#### 环境搭建
 https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.1.md
 #### 基础语法
 * 变量定义
