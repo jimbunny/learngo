@@ -25,7 +25,7 @@ func bounded(v int) int {
 		return v
 	}
 }
-//switch 无表达式
+//switch 有表达式
 func eval(a, b int, op string) int {
 	var result int
 	switch op {
@@ -42,6 +42,7 @@ func eval(a, b int, op string) int {
 	}
 	return result
 }
+//switch后无表达式
 func grade(score int) string {
 	g := ""
 	switch {
@@ -58,6 +59,7 @@ func grade(score int) string {
 	}
 	return g
 }
+//主函数
 func main() {
 	fmt.Println(bounded(101))
 	const filename = "abc.txt"
