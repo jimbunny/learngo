@@ -2,10 +2,12 @@
 if
 	1,if的条件里不需要括号
 	2,if的条件里可以赋值
-	3,if的条件里赋值的变量作用域就在这个if语句里
+	3,if条件里可以定义变量
+	4,if的条件里赋值的变量作用域就在这个if语句里
 switch
 	1,switch会自动break,除非使用fallthrough
 	2,switch后面可以没有表达式
+	3,switch不需要break,也可以直接switch多个条件
  */
 package main
 
