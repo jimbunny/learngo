@@ -25,12 +25,11 @@ import "fmt"
 
 //nonrepeting
 func lengthOFNonRepeatingSubStr(s string) int {
-	lastOccurred := make(map[byte]int)
+	lastOccurred := make(map[rune]int)
 	start := 0
 	maxLength := 0
-	for i, ch := range []byte(s){
+	for i, ch := range []rune(s){
 		if lastI, ok := lastOccurred[ch]; ok && lastI >= start {
-			//	更新start
 			start = lastI + 1
 		}
 		if i - start + 1 > maxLength {
@@ -83,4 +82,6 @@ func main() {
 	fmt.Println(lengthOFNonRepeatingSubStr("b"))
 	fmt.Println(lengthOFNonRepeatingSubStr("abcdef"))
 	fmt.Println(lengthOFNonRepeatingSubStr("哈哈，你好"))
+	fmt.Println(lengthOFNonRepeatingSubStr("一二三二一"))
+	fmt.Println(lengthOFNonRepeatingSubStr("黑化肥挥发会发挥会花飞灰化肥挥发发黑会飞花"))
 }
