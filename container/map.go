@@ -28,42 +28,43 @@ func lengthOFNonRepeatingSubStr(s string) int {
 	lastOccurred := make(map[rune]int)
 	start := 0
 	maxLength := 0
-	for i, ch := range []rune(s){
+	for i, ch := range []rune(s) {
 		if lastI, ok := lastOccurred[ch]; ok && lastI >= start {
 			start = lastI + 1
 		}
-		if i - start + 1 > maxLength {
+		if i-start+1 > maxLength {
 			maxLength = i - start + 1
 		}
 		lastOccurred[ch] = i
 	}
 	return maxLength
 }
+
 //主函数
 func main() {
-	m := map[string]string {
-		"name": "jim",
-		"course": "golang",
-		"site": "shanghai",
+	m := map[string]string{
+		"name":    "jim",
+		"course":  "golang",
+		"site":    "shanghai",
 		"quality": "not bad",
 	}
-	m2 := make(map[string]int)  // m2 == empty map
+	m2 := make(map[string]int) // m2 == empty map
 
 	var m3 map[string]int // m3 == nil
 
 	fmt.Println(m, m2, m3)
 
 	fmt.Println("Traversing map")
-	for k, v := range m{
+	for k, v := range m {
 		fmt.Println(k, v)
 	}
 
 	fmt.Println("Getting values")
 	courseName, ok := m["course"]
 	fmt.Println(courseName, ok)
-	if caurseName, ok := m["caurse"]; ok{
+	if caurseName, ok := m["caurse"]; ok {
 		fmt.Println(caurseName)
-	}else {
+	} else {
 		fmt.Println("key does not exist")
 	}
 

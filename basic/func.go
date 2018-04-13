@@ -9,9 +9,9 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"reflect"
 	"runtime"
-	"math"
 )
 
 //switch
@@ -22,7 +22,7 @@ func eval1(a, b int, op string) (int, error) {
 	case "-":
 		return a - b, nil
 	case "*":
-		return  a * b, nil
+		return a * b, nil
 	case "/":
 		q, _ := div(a, b)
 		return q, nil
@@ -30,14 +30,16 @@ func eval1(a, b int, op string) (int, error) {
 		return 0, fmt.Errorf("unsupported operator: %s", op)
 	}
 }
+
 //双返回值 带余除法 13 / 3 = 4 ... 1
 func div(a, b int) (q, r int) {
 	//q = a / b
 	//r = a % b
 	return a / b, a % b
 }
+
 //函数式编程
-func apply(op func(int, int) int, a, b int)  int {
+func apply(op func(int, int) int, a, b int) int {
 	//reflect反射获取op的值
 	p := reflect.ValueOf(op).Pointer()
 	opName := runtime.FuncForPC(p).Name()
@@ -45,20 +47,22 @@ func apply(op func(int, int) int, a, b int)  int {
 		"(%d, %d)\n", opName, a, b)
 	return op(a, b)
 }
+
 //可变参数作为参数列表
 func sum(numbers ...int) int {
 	s := 0
-	for i := range numbers{
+	for i := range numbers {
 		s += numbers[i]
 	}
 	return s
 }
+
 //主函数
 func main() {
 	//fmt.Println(eval1(4,4,"/"))
-	if result, err := eval1(3,4,"x");err != nil {
+	if result, err := eval1(3, 4, "x"); err != nil {
 		fmt.Println("Error:", err)
-	}else {
+	} else {
 		fmt.Println(result)
 	}
 	q, r := div(13, 3)

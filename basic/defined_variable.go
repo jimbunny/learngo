@@ -16,35 +16,41 @@ import "fmt"
 var aa = 3
 var ss = "kkk"
 var bb = true
+
 //或者
-var(
+var (
 	cc = 3
 	dd = "kkk"
 	ff = true
 )
+
 //定义变量
-func variableZeroValue()  {
+func variableZeroValue() {
 	var a int
 	var b string
-	fmt.Println(a,b)
-	fmt.Printf("%d %s\n",a,b)
+	fmt.Println(a, b)
+	fmt.Printf("%d %s\n", a, b)
 }
+
 //定义变量付初值
-func variableInitialValue()  {
+func variableInitialValue() {
 	var a, s int = 3, 4
 	var b string = "abc"
 	fmt.Println(a, b, s)
 }
+
 //自动推断变量类型
-func variableTypeDeduction()  {
-	var a, b, c ,s = 3, 4, true, "def"
+func variableTypeDeduction() {
+	var a, b, c, s = 3, 4, true, "def"
 	fmt.Println(a, b, c, s)
 }
+
 //简写声明定义变量
-func variableShorter()  {
-	a, b, c ,s := 3, 4, true, "def"
+func variableShorter() {
+	a, b, c, s := 3, 4, true, "def"
 	fmt.Println(a, b, c, s)
 }
+
 //主函数
 func main() {
 	fmt.Println("hello word")
@@ -54,4 +60,3 @@ func main() {
 	variableShorter()
 	fmt.Println(aa, ss, bb)
 }
-

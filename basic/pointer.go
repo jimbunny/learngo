@@ -8,12 +8,14 @@
 package main
 
 import "fmt"
+
 //值传递
-func swap(a, b int)  {
+func swap(a, b int) {
 	b, a = a, b
 }
+
 //引用传递
-func swap1(a, b *int)  {
+func swap1(a, b *int) {
 	*b, *a = *a, *b
 }
 func main() {

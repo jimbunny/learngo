@@ -9,15 +9,15 @@ package main
 import "fmt"
 
 //打印结构
-func printSlice(s []int)  {
-	fmt.Printf("%v,len=%d, cap=%d\n",s, len(s), cap(s))
+func printSlice(s []int) {
+	fmt.Printf("%v,len=%d, cap=%d\n", s, len(s), cap(s))
 }
 func main() {
 	fmt.Println("Creating slice")
 	var s []int // zero value for slice is nil
-	for i :=0; i < 100; i++{
+	for i := 0; i < 100; i++ {
 		printSlice(s)
-		s = append(s, 2 * i+ 1)
+		s = append(s, 2*i+1)
 	}
 	fmt.Println(s)
 
@@ -26,7 +26,7 @@ func main() {
 
 	s7 := make([]int, 16)
 
-	s8 :=make([]int, 10, 32)
+	s8 := make([]int, 10, 32)
 	printSlice(s7)
 	printSlice(s8)
 	// 拷贝
@@ -44,8 +44,8 @@ func main() {
 	fmt.Println(front)
 	// 删除末尾元素
 	fmt.Println("Popping from back")
-	tail := s7[len(s7) -1]
-	s7 = s7[:len(s7) - 1]
+	tail := s7[len(s7)-1]
+	s7 = s7[:len(s7)-1]
 	fmt.Println(tail)
 	printSlice(s7)
 }

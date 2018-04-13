@@ -18,14 +18,14 @@ import (
 )
 
 func main() {
-	s :="Yes呵呵哒！"  // UTF-8 英文1字节，中文3字节
+	s := "Yes呵呵哒！" // UTF-8 英文1字节，中文3字节
 	fmt.Println(len(s))
 	fmt.Printf("%X\n", []byte(s))
-	for _, b := range []byte(s){
+	for _, b := range []byte(s) {
 		fmt.Printf("%X ", b)
 	}
 	fmt.Println()
-	for i, ch := range s{  // ch is a rune
+	for i, ch := range s { // ch is a rune
 		fmt.Printf("(%d %X)", i, ch)
 	}
 	fmt.Println()
@@ -33,7 +33,7 @@ func main() {
 	fmt.Println("Rune count", utf8.RuneCountInString(s))
 
 	bytes := []byte(s)
-	for len(bytes) > 0{
+	for len(bytes) > 0 {
 		ch, size := utf8.DecodeRune(bytes)
 		bytes = bytes[size:]
 		fmt.Printf("%c ", ch)

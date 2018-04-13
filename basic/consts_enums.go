@@ -16,27 +16,29 @@
 package main
 
 import (
-	"math"
 	"fmt"
+	"math"
 )
+
 //常量定义
-func consts()  {
-	const filename string= "abc.txt"
+func consts() {
+	const filename string = "abc.txt"
 	const a, b = 3, 4
 	var c int
 	c = int(math.Sqrt(a*a + b*b))
 	fmt.Println(filename, c)
 }
+
 //枚举类型
-func enums()  {
-	const(
+func enums() {
+	const (
 		cpp    = 0
 		java   = 1
 		python = 2
 		golang = 3
 	)
 	fmt.Println(cpp, java, python, golang)
-	const(
+	const (
 		a = iota
 		_
 		c
@@ -44,8 +46,8 @@ func enums()  {
 		e
 	)
 	fmt.Println(a, c, d, e)
-//	b, kb, mb, gb, tb, pb
-	const(
+	//	b, kb, mb, gb, tb, pb
+	const (
 		b = 1 << (10 * iota)
 		kb
 		mb

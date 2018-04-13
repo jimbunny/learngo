@@ -9,7 +9,7 @@ package main
 
 import "fmt"
 
-func updateSlice(s []int)  {
+func updateSlice(s []int) {
 	s[0] = 100
 }
 func main() {
